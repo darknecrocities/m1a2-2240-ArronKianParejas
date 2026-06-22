@@ -1,0 +1,13 @@
+{
+  "name": "module-1-activity-2-javascript-fundamentals",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node playground.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^2.0.0"
+  }
+}
