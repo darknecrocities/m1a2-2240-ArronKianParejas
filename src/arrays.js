@@ -14,33 +14,33 @@
 // Note "a NEW array": these methods leave the original alone. React state
 // works the same way: build a new array, don't change the old one in place.
 export function double(nums) {
-  // TODO
+  return nums.map(n => n * 2);
 }
 
 // Return a NEW array containing only the even numbers.
 //   evens([1, 2, 3, 4])  ->  [2, 4]
 export function evens(nums) {
-  // TODO
+  return nums.filter(n => n % 2 === 0);
 }
 
 // Return the sum of all the numbers. An empty array sums to 0.
 //   total([1, 2, 3])  ->  6
 //   total([])         ->  0
 export function total(nums) {
-  // TODO
+  return nums.reduce((acc, curr) => acc + curr, 0);
 }
 
 // Return the FIRST element for which `predicate(element)` is true,
 // or undefined if nothing matches.
 //   firstMatch([1, 2, 3, 4], n => n > 2)  ->  3
 export function firstMatch(arr, predicate) {
-  // TODO
+  return arr.find(predicate);
 }
 
 // Given an array of person objects, return an array of just their names.
 //   names([{ name: 'Ana' }, { name: 'Ben' }])  ->  ['Ana', 'Ben']
 export function names(people) {
-  // TODO
+  return people.map(p => p.name);
 }
 
 // Return a NEW array with `item` added to the end. Do NOT change the original.
@@ -48,12 +48,13 @@ export function names(people) {
 // never with arr.push().
 //   addItem([1, 2], 3)  ->  [1, 2, 3]
 export function addItem(arr, item) {
-  // TODO
+  return [...arr, item];
 }
 
 // Return a NEW array with the element at `index` removed. Original unchanged.
 // In React you remove from array state by filtering, not with splice().
 //   removeAt(['a', 'b', 'c'], 1)  ->  ['a', 'c']
 export function removeAt(arr, index) {
-  // TODO
+  return arr.filter((_, idx) => idx !== index);
 }
+

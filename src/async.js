@@ -11,7 +11,9 @@
 // Return a Promise that resolves with `value` after `ms` milliseconds.
 //   await delay(10, 'done')  ->  'done'
 export function delay(ms, value) {
-  // TODO
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(value), ms);
+  });
 }
 
 // Look up a user by `id` in the `db` object (a map of id -> user). If the user
@@ -21,5 +23,10 @@ export function delay(ms, value) {
 //   await fetchUser(1, { 1: { name: 'Ana' } })  ->  { name: 'Ana' }
 //   await fetchUser(9, {})  ->  the Promise rejects with that error
 export async function fetchUser(id, db) {
-  // TODO
+  const user = db[id];
+  if (user) {
+    return user;
+  }
+  throw new Error(`User ${id} not found`);
 }
+

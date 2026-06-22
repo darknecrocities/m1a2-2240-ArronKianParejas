@@ -10,22 +10,22 @@
 // Return a greeting in the form "Hello, NAME!".
 //   greet('Juan')  ->  'Hello, Juan!'
 export function greet(name) {
-  // TODO
+  return `Hello, ${name}!`;
 }
 
 // Return the area of a rectangle (width × height). If `height` is not passed in
 // at all, treat the shape as a square and use `width` for both sides.
 //   area(3, 4)  ->  12
 //   area(5)     ->  25
-export function area(width, height) {
-  // TODO
+export function area(width, height = width) {
+  return width * height;
 }
 
 // Return the string 'even' or 'odd' for the given whole number.
 //   parityLabel(4)  ->  'even'
 //   parityLabel(7)  ->  'odd'
 export function parityLabel(n) {
-  // TODO
+  return n % 2 === 0 ? 'even' : 'odd';
 }
 
 // Return the type of the value, as a string.
@@ -33,5 +33,6 @@ export function parityLabel(n) {
 //   describeType('hi')  ->  'string'
 //   describeType(true)  ->  'boolean'
 export function describeType(value) {
-  // TODO
+  return typeof value;
 }
+

@@ -11,7 +11,8 @@
 // first and last name out of the argument.
 //   fullName({ firstName: 'Juan', lastName: 'Cruz' })  ->  'Juan Cruz'
 export function fullName(person) {
-  // TODO
+  const { firstName, lastName } = person;
+  return `${firstName} ${lastName}`;
 }
 
 // Return a NEW object: a copy of `obj` with the keys from `updates` applied
@@ -21,14 +22,14 @@ export function fullName(person) {
 // In React you never change state directly; you build a new object with your
 // changes applied and hand that to the setter. This is that pattern, exactly.
 export function withUpdates(obj, updates) {
-  // TODO
+  return { ...obj, ...updates };
 }
 
 // Return the sum of however many number arguments are passed in.
 //   sumAll(1, 2, 3)  ->  6
 //   sumAll()         ->  0
-export function sumAll() {
-  // TODO: this function should accept any number of arguments
+export function sumAll(...args) {
+  return args.reduce((acc, curr) => acc + curr, 0);
 }
 
 // Safely return the user's city. Not every user has an `address`, and not every
@@ -38,5 +39,6 @@ export function sumAll() {
 //   cityOf({})                                ->  'Unknown'
 //   cityOf({ address: {} })                   ->  'Unknown'
 export function cityOf(user) {
-  // TODO
+  return user?.address?.city ?? 'Unknown';
 }
+

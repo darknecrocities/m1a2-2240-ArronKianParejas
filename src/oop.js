@@ -15,7 +15,14 @@
 //   const r = new Rectangle(3, 4)
 //   r.area()  ->  12
 export class Rectangle {
-  // TODO: a constructor(width, height), then an area() method
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  area() {
+    return this.width * this.height;
+  }
 }
 
 // A square IS A rectangle whose sides are equal. Make Square EXTEND Rectangle.
@@ -24,7 +31,9 @@ export class Rectangle {
 //   const s = new Square(5)
 //   s.area()  ->  25
 export class Square extends Rectangle {
-  // TODO: a constructor(side) that calls super(...)
+  constructor(side) {
+    super(side, side);
+  }
 }
 
 // A counter that holds a number, like a tiny piece of state. The constructor
@@ -36,5 +45,16 @@ export class Square extends Rectangle {
 //   c.decrement()
 //   c.count  ->  1
 export class Counter {
-  // TODO: a constructor(start = 0), an increment(), and a decrement()
+  constructor(start = 0) {
+    this.count = start;
+  }
+
+  increment() {
+    this.count += 1;
+  }
+
+  decrement() {
+    this.count -= 1;
+  }
 }
+

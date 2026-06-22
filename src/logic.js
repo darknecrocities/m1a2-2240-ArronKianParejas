@@ -10,7 +10,9 @@
 //   classify(0)  -> 'zero'
 //   classify(8)  -> 'positive'
 export function classify(n) {
-  // TODO
+  if (n < 0) return 'negative';
+  if (n === 0) return 'zero';
+  return 'positive';
 }
 
 // Return an ARRAY for the numbers 1..n (inclusive), following FizzBuzz rules:
@@ -20,14 +22,30 @@ export function classify(n) {
 //   • otherwise                 -> the number itself (a number, not a string)
 //   fizzbuzz(5)  ->  [1, 2, 'Fizz', 4, 'Buzz']
 export function fizzbuzz(n) {
-  // TODO
+  const result = [];
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      result.push('FizzBuzz');
+    } else if (i % 3 === 0) {
+      result.push('Fizz');
+    } else if (i % 5 === 0) {
+      result.push('Buzz');
+    } else {
+      result.push(i);
+    }
+  }
+  return result;
 }
 
 // Return the sum of all whole numbers from `a` to `b` inclusive. Use a loop.
 //   sumRange(1, 5)  ->  15   (1+2+3+4+5)
 //   sumRange(3, 3)  ->  3
 export function sumRange(a, b) {
-  // TODO
+  let sum = 0;
+  for (let i = a; i <= b; i++) {
+    sum += i;
+  }
+  return sum;
 }
 
 // Logical operators return a VALUE, not just true/false. This is how React
@@ -36,7 +54,7 @@ export function sumRange(a, b) {
 //   showIf(true, 'Saved')  ->  'Saved'
 //   showIf(false, 'Saved') ->  false
 export function showIf(cond, value) {
-  // TODO
+  return cond && value;
 }
 
 // The `||` fallback: React writes {name || 'Guest'} to supply a default when a
@@ -44,5 +62,6 @@ export function showIf(cond, value) {
 //   orDefault('Ana')  ->  'Ana'
 //   orDefault('')     ->  'Guest'
 export function orDefault(name) {
-  // TODO
+  return name || 'Guest';
 }
+
